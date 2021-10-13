@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
+  <div class="cart">
     <div class="col-3">
-      <label class="sr-only" for="inlineFormInputName2">Quantity</label>
+      <label class="sr-only" for="inlineFormInputName2">Количество</label>
       <input type="number" v-model="quantity" class="form-control mb-2 mr-sm-2" />
     </div>
     <button
@@ -9,13 +9,14 @@
       @click.stop="addCart({product, quantity})"
       type="button"
       class="btn btn-primary btn-lg btn-block col-9"
-    >ADD TO CART</button>
+    >Добавить в корзину</button>
     <button
       v-else
       @click.stop="removeCart(product.id)"
       type="button"
       class="btn btn-primary btn-lg btn-block col-9"
-    >REMOVE FROM CART</button>
+    >Удалить с корзины</button>
+    <a href="#" class="btn btn-primary btn-lg btn-block">Купить</a>
   </div>
 </template>
 
@@ -61,5 +62,31 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.cart {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+  width: 70%;
+  .col-3 {
+    padding-left: 0;
+    input {
+
+    }
+  };
+  button {
+    background: #E01563;
+    border-radius: 4px;
+    height: 50px;
+  };
+  a {
+    position: relative;
+    top: -8px;
+    background: #393434;
+    border-radius: 4px;
+    margin-left: 20px;
+    height: 50px;
+    width: 200px;
+  }
+}
 </style>

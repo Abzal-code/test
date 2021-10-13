@@ -8,11 +8,8 @@
           class="card"
         >
           <div class="card__header">
-            <div v-if="product.price > 250" class="green__text">
-              <span>Новинки</span>
-            </div>
-            <div v-if="product.price < 200" class="red__text">
-              <span>Скидка</span>
+            <div :class="product.price > 250 ? 'green' : 'red'">
+              <span>{{ product.price > 250 ? 'Новинка'.toUpperCase() : 'Скидка'.toUpperCase() }}</span>
             </div>
             <div class="header__img">
               <img src="@/assets/heart.png" alt="">
@@ -48,8 +45,9 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       padding: 10px;
-      .green__text {
+      .green {
         border: 1px solid;
+        font-size: 12px;
         border-radius: 15px;
         width: 80px;
         text-align: center;
@@ -57,8 +55,9 @@ export default {
         background-color: #3EB991;
         padding: 2px;
       }
-      .red__text {
+      .red {
         border: 1px solid;
+        font-size: 12px;
         border-radius: 15px;
         width: 80px;
         text-align: center;

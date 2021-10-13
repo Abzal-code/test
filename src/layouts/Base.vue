@@ -22,14 +22,6 @@
               class="img-thumbnail profile-image"
               alt
             />
-            <router-link class="btn btn-primary my-2 my-sm-0" to="/cart">
-              <img
-                src="@/assets/cart.svg"
-                width="50"
-                alt
-              />
-              <span class="badge badge-danger badge-pill">{{ cart.length }}</span>
-            </router-link>
           </div>
           <router-link v-else class="btn btn-primary my-2 my-sm-0" to="/login">Login</router-link>
         </div>
@@ -48,7 +40,14 @@
         </div>
         <div class="third__block">
           <a href="#"><img src="@/assets/heart.svg" alt=""></a>
-          <a href="#"><img src="@/assets/cart.svg" alt=""></a>
+          <router-link class="btn btn-primary my-2 my-sm-0" to="/cart">
+            <img
+                src="@/assets/cart.svg"
+                width="50"
+                alt
+            />
+            <span class="badge badge-danger badge-pill">{{ cart.length }}</span>
+          </router-link>
         </div>
       </nav>
     </div>
@@ -208,7 +207,7 @@ export default {
         top: 17px;
         a {
           position: relative;
-          margin-right: 50px;
+          margin-right: 40px;
           text-decoration: none;
           color: #000000;
           img {
@@ -220,9 +219,13 @@ export default {
       .third__block {
         position: absolute;
         right: 15px;
-        top: 15px;
+        top: 0;
         a {
           margin-left: 10px;
+        }
+        .btn {
+          background-color: #ffffff;
+          border: none;
         }
       }
     }
@@ -251,11 +254,12 @@ export default {
   footer {
     display: flex;
     flex-direction: column;
+    background-color: #F0F0F0;
     .top__footer {
       display: flex;
       flex-direction: row;
       width: 1140px;
-      margin: 50px auto;
+      margin: 30px auto;
       nav {
         display: flex;
         flex-direction: row;
@@ -300,7 +304,7 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         width: 1140px;
-        margin: 50px auto;
+        margin: 30px auto;
         .block {
           color: #ffffff;
         }
